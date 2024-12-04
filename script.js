@@ -3,6 +3,38 @@ const Timeline = () => {
     const [typeFilter, setTypeFilter] = React.useState('todos');
     const [areaFilter, setAreaFilter] = React.useState('todas');
 
+    const Header = () => (
+        <div className="timeline-header">
+            <div className="logos-container">
+                <div className="logo-wrapper">
+                    <img 
+                        src="logo-unt.png" 
+                        alt="Logo Universidad Nacional de Tucumán" 
+                        className="logo unt-logo"
+                    />
+                </div>
+                <div className="logo-wrapper">
+                    <img 
+                        src="logo-sied.png" 
+                        alt="Logo SIED-UNT" 
+                        className="logo sied-logo"
+                    />
+                </div>
+                <div className="logo-wrapper">
+                    <img 
+                        src="logo-peadunt.png" 
+                        alt="Logo PEADUNT" 
+                        className="logo peadunt-logo"
+                    />
+                </div>
+            </div>
+            <div className="title-container">
+                <h1 className="timeline-title">Línea del Tiempo SIED UNT</h1>
+                <p className="timeline-subtitle">2013-2024</p>
+            </div>
+        </div>
+    );
+
     const events = {
         2013: [
             {
@@ -10,7 +42,9 @@ const Timeline = () => {
                 type: "resolution",
                 doc: "Res. N° 680-13",
                 area: "Rectorado",
-                month: "Marzo"
+                month: "Marzo",
+                icon: "file-text",
+                color: "indigo"
             }
         ],
         2019: [
@@ -18,7 +52,9 @@ const Timeline = () => {
                 title: "Aprobación/Validación SIED UNT",
                 type: "approval",
                 area: "SPU",
-                month: "Julio"
+                month: "Julio",
+                icon: "award",
+                color: "yellow"
             }
         ],
         2021: [
@@ -27,7 +63,9 @@ const Timeline = () => {
                 type: "academic",
                 doc: "Res. N° 85-21",
                 area: "Secretaría de Posgrado",
-                month: "Mayo"
+                month: "Mayo",
+                icon: "book-open",
+                color: "green"
             }
         ],
         2022: [
@@ -36,14 +74,18 @@ const Timeline = () => {
                 type: "institutional",
                 doc: "Documento Institucional",
                 area: "Rectorado",
-                month: "Marzo"
+                month: "Marzo",
+                icon: "landmark",
+                color: "purple"
             },
             {
                 title: "Estructura Organizacional del SIED UNT",
                 type: "institutional",
                 doc: "Res. N° 859-22",
                 area: "Rectorado",
-                month: "Agosto"
+                month: "Agosto",
+                icon: "git-branch",
+                color: "purple"
             }
         ],
         2023: [
@@ -52,14 +94,18 @@ const Timeline = () => {
                 type: "institutional",
                 doc: "Res. N° 117/23",
                 area: "Rectorado",
-                month: "Febrero"
+                month: "Febrero",
+                icon: "users",
+                color: "purple"
             },
             {
                 title: "Aprobación Proyecto de Investigación PIUNT",
                 type: "research",
                 doc: "Res. HCS N° 356-23",
                 area: "HCS UNT",
-                month: "Mayo"
+                month: "Mayo",
+                icon: "search",
+                color: "red"
             }
         ],
         2024: [
@@ -68,27 +114,20 @@ const Timeline = () => {
                 type: "academic",
                 doc: "RES - DGAC - 5244/2024",
                 area: "SIED UNT",
-                month: "Febrero"
+                month: "Febrero",
+                icon: "cpu",
+                color: "green"
             },
             {
                 title: "Convenio Marco UNT- Asociación Civil 'Chicos Net'",
                 type: "institutional",
                 doc: "RES - DGD - 13954/2024",
                 area: "SIED UNT",
-                month: "Abril"
+                month: "Abril",
+                icon: "handshake",
+                color: "purple"
             }
         ]
-    };
-
-    const getEventIcon = (type) => {
-        switch(type) {
-            case 'resolution': return 'file-text';
-            case 'academic': return 'book';
-            case 'institutional': return 'landmark';
-            case 'approval': return 'award';
-            case 'research': return 'users';
-            default: return 'calendar';
-        }
     };
 
     React.useEffect(() => {
@@ -107,11 +146,8 @@ const Timeline = () => {
 
     return (
         <div className="timeline-container">
-            <div className="timeline-header">
-                <h1 className="timeline-title">Línea de Tiempo SIED UNT</h1>
-                <p className="timeline-subtitle">2013-2024</p>
-            </div>
-
+            <Header />
+            
             <div className="filters-container">
                 <div className="filter-group">
                     <label className="filter-label">Tipo de Evento</label>
@@ -152,20 +188,37 @@ const Timeline = () => {
                         className={`year-marker ${selectedYear === year ? 'active' : ''}`}
                         onClick={() => setSelectedYear(year)}
                     >
-                        {year}
+                        {year.slice(2)}
                     </div>
                 ))}
             </div>
 
+            <h2 className="events-title">Eventos en {selectedYear}</h2>
+
             <div className="events-grid">
                 {filteredEvents.map((event, index) => (
                     <div key={index} className={`event-card event-${event.type}`}>
-                        <i data-feather={getEventIcon(event.type)} className="event-icon" />
-                        <h3 className="event-title">{event.title}</h3>
-                        <div className="event-details">
-                            <div>{event.month}</div>
-                            {event.doc && <div>{event.doc}</div>}
-                            <div>{event.area}</div>
+                        <div className={`event-icon-wrapper ${event.color}`}>
+                            <i data-feather={event.icon} className="event-icon" />
+                        </div>
+                        <div className="event-content">
+                            <h3 className="event-title">{event.title}</h3>
+                            <div className="event-details">
+                                <span className="event-date">
+                                    <i data-feather="calendar" className="icon-small" />
+                                    {event.month}
+                                </span>
+                                {event.doc && (
+                                    <span className="event-doc">
+                                        <i data-feather="file-text" className="icon-small" />
+                                        {event.doc}
+                                    </span>
+                                )}
+                                <span className="event-area">
+                                    <i data-feather="map-pin" className="icon-small" />
+                                    {event.area}
+                                </span>
+                            </div>
                         </div>
                     </div>
                 ))}
