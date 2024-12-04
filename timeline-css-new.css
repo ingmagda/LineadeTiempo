@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.timeline-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-subtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.view-button {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-button:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.view-button.active {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.filters-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-group {
+    flex: 1;
+}
+
+.filter-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.filter-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: white;
+    color: #1a202c;
+    transition: all 0.2s;
+}
+
+.filter-select:hover {
+    border-color: #3b82f6;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    ring: 2px rgba(59, 130, 246, 0.5);
+}
+
+.timeline-nav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 3rem 0;
+    padding: 1rem 0;
+}
+
+.timeline-nav::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #e2e8f0;
+    z-index: 1;
+}
+
+.year-marker {
+    width: 40px;
+    height: 40px;
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    z-index: 2;
+}
+
+.year-marker:hover {
+    background-color: #2563eb;
+    transform: scale(1.1);
+}
+
+.year-marker.active {
+    background-color: #1d4ed8;
+    transform: scale(1.1);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.event-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0.5;
+}
+
+.event-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1a202c;
+    margin-bottom: 0.75rem;
+    padding-right: 2rem;
+}
+
+.event-details {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Colores por tipo de evento */
+.event-resolution::before { background-color: #3b82f6; }
+.event-academic::before { background-color: #22c55e; }
+.event-institutional::before { background-color: #8b5cf6; }
+.event-approval::before { background-color: #eab308; }
+.event-research::before { background-color: #ef4444; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filters-container {
+        flex-direction: column;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
