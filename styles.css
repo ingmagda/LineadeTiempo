@@ -11,24 +11,17 @@ body {
     padding: 40px;
     background-color: white;
     border-radius: 16px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
+/* Estilos para los logos */
 .logos-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     margin-bottom: 2rem;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 1.5rem;
 }
 
 .logo-wrapper {
@@ -36,29 +29,30 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    min-width: 250px;
-    height: 150px; /* Altura fija para todos los contenedores */
 }
 
-.logo-wrapper img.unt-logo {
-    height: 130px !important;
-    width: auto;
+.logo {
+    max-width: 100%;
+    height: auto;
     object-fit: contain;
 }
 
-.logo-wrapper img.sied-logo {
-    height: 130px !important;
-    width: auto;
-    object-fit: contain;
+.unt-logo {
+    height: 120px;
 }
 
-.logo-wrapper img.peadunt-logo {
-    height: 130px !important;
-    width: auto;
-    object-fit: contain;
+.sied-logo {
+    height: 140px;
 }
-.title-container {
-    margin-top: 2rem;
+
+.peadunt-logo {
+    height: 130px;
+}
+
+/* Estilos del encabezado */
+.timeline-header {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .timeline-title {
@@ -73,6 +67,7 @@ body {
     font-size: 1.1rem;
 }
 
+/* Estilos de los filtros */
 .filters-container {
     display: flex;
     gap: 2rem;
@@ -83,9 +78,9 @@ body {
     flex: 1;
 }
 
-.filter-label {
+.filter-group label {
     display: block;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     color: #4a5568;
     font-weight: 500;
 }
@@ -97,19 +92,15 @@ body {
     border-radius: 10px;
     background-color: white;
     color: #1a202c;
+    font-size: 1rem;
     transition: all 0.2s;
 }
 
 .filter-select:hover {
-    border-color: #3b82f6;
+    border-color: #4299e1;
 }
 
-.filter-select:focus {
-    outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
-}
-
+/* Estilos de la navegación de años */
 .timeline-nav {
     display: flex;
     justify-content: space-between;
@@ -130,8 +121,8 @@ body {
 }
 
 .year-marker {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background-color: #cbd5e0;
     color: white;
     border-radius: 50%;
@@ -143,7 +134,7 @@ body {
     position: relative;
     z-index: 2;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .year-marker:hover {
@@ -156,95 +147,77 @@ body {
     transform: scale(1.1);
 }
 
+/* Estilos de la lista de eventos */
 .events-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 600;
     color: #2d3748;
     margin-bottom: 2rem;
 }
 
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .event-card {
     display: flex;
+    align-items: flex-start;
     gap: 1.5rem;
     padding: 1.5rem;
     background: white;
     border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    transition: all 0.3s;
+    border-left: 4px solid;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
 }
 
 .event-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.event-icon-wrapper {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+.event-icon {
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 8px;
 }
-
-.event-icon-wrapper.indigo { background-color: #ebf4ff; }
-.event-icon-wrapper.yellow { background-color: #fefcbf; }
-.event-icon-wrapper.green { background-color: #f0fff4; }
-.event-icon-wrapper.purple { background-color: #faf5ff; }
-.event-icon-wrapper.red { background-color: #fff5f5; }
-
-.event-icon {
-    width: 24px;
-    height: 24px;
-}
-
-.indigo .event-icon { color: #4c51bf; }
-.yellow .event-icon { color: #d69e2e; }
-.green .event-icon { color: #38a169; }
-.purple .event-icon { color: #805ad5; }
-.red .event-icon { color: #e53e3e; }
 
 .event-content {
     flex: 1;
 }
 
-.event-title {
-    font-size: 1.125rem;
+.event-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: #1a202c;
-    margin-bottom: 1rem;
+    color: #2d3748;
 }
 
-.event-details {
+.event-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    color: #718096;
     font-size: 0.875rem;
+    color: #718096;
 }
 
-.event-date,
-.event-doc,
-.event-area {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.event-doc {
+    color: #4299e1;
 }
 
-.icon-small {
-    width: 16px;
-    height: 16px;
-    opacity: 0.7;
-}
+/* Colores por tipo de evento */
+.resolution { border-left-color: #3182ce; }
+.academic { border-left-color: #48bb78; }
+.institutional { border-left-color: #805ad5; }
+.approval { border-left-color: #ecc94b; }
+.research { border-left-color: #ed8936; }
+.publication { border-left-color: #667eea; }
 
-/* Responsive design */
+/* Responsive */
 @media (max-width: 768px) {
     .timeline-container {
         padding: 20px;
@@ -255,20 +228,18 @@ body {
         gap: 2rem;
     }
 
-    .logo {
-        max-height: 60px;
-    }
-
-    .timeline-title {
-        font-size: 1.75rem;
-    }
-
     .filters-container {
         flex-direction: column;
         gap: 1rem;
     }
 
-    .events-grid {
-        grid-template-columns: 1fr;
+    .year-marker {
+        width: 50px;
+        height: 50px;
+        font-size: 0.875rem;
+    }
+
+    .timeline-title {
+        font-size: 1.75rem;
     }
 }
