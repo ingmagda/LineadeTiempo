@@ -45,18 +45,20 @@ body {
     object-fit: contain;
 }
 
-.unt-logo {
-    height: 120px;  /* Logo UNT */
+.logo-wrapper img.sied-logo {
+    height: 140px !important;
+    width: auto;
 }
 
-.sied-logo {
-    height: 140px;  /* Logo SIED más grande */
+.logo-wrapper img.peadunt-logo {
+    height: 130px !important;
+    width: auto;
 }
 
-.peadunt-logo {
-    height: 130px;  /* Logo PEADUNT */
+.logo-wrapper img.unt-logo {
+    height: 120px !important;
+    width: auto;
 }
-
 .title-container {
     margin-top: 2rem;
 }
