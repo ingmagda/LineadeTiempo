@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem;  /* Más espacio entre logos */
+    gap: 3rem;  /* Más espacio entre logos */
     margin-bottom: 2rem;
     padding: 2rem;
 }
@@ -41,7 +41,7 @@ body {
 }
 
 .unt-logo {
-    height: 90px;  /* Ajustado para el logo UNT */
+    height: 60px;  /* Ajustado para el logo UNT */
     width: auto;
 }
 
@@ -64,7 +64,7 @@ body {
 .timeline-title {
     font-size: 2.25rem;
     font-weight: 700;
-    color: #1a202c;
+    color: #e2e8f0;
     margin-bottom: 0.5rem;
 }
 
