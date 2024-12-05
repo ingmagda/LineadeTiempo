@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
     margin-bottom: 2rem;
     padding: 1.5rem;
 }
@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;  /* Más espacio entre logos */
+    gap: 4rem;  /* Más espacio entre logos */
     margin-bottom: 2rem;
     padding: 2rem;
 }
@@ -41,7 +41,7 @@ body {
 }
 
 .unt-logo {
-    height: 80px;  /* Ajustado para el logo UNT */
+    height: 60px;  /* Ajustado para el logo UNT */
     width: auto;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .peadunt-logo {
-    height: 230px;  /* Tamaño grande para PEADUNT */
+    height: 250px;  /* Tamaño grande para PEADUNT */
     width: auto;
 }
 
