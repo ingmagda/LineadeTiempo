@@ -41,17 +41,17 @@ body {
 }
 
 .unt-logo {
-    height: 60px;  /* Ajustado para el logo UNT */
+    height: 100px;  /* Ajustado para el logo UNT */
     width: auto;
 }
 
 .sied-logo {
-    height: 180px;  /* El más grande para el SIED */
+    height: 190px;  /* El más grande para el SIED */
     width: auto;
 }
 
 .peadunt-logo {
-    height: 170px;  /* Tamaño grande para PEADUNT */
+    height: 230px;  /* Tamaño grande para PEADUNT */
     width: auto;
 }
 
@@ -64,7 +64,7 @@ body {
 .timeline-title {
     font-size: 2.25rem;
     font-weight: 700;
-    color: #e2e8f0;
+    color: #013D7D;
     margin-bottom: 0.5rem;
 }
 
