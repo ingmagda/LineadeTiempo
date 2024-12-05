@@ -166,7 +166,7 @@ const Timeline = () => {
                     </div>
                 </div>
                 <h1 className="timeline-title">Línea de Tiempo</h1>
-                <p className="timeline-subtitle">Línea: "Análisis Documental" del Proyecto de Investigación PIUNT C701</p>
+                <p className="timeline-subtitle">Análisis Documental del Proyecto de Investigación PIUNT C701</p>
             </div>
 
             <div className="filters-container">
