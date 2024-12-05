@@ -129,8 +129,8 @@ body {
 }
 
 .year-marker {
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
     background-color: #cbd5e0;
     color: white;
     border-radius: 50%;
@@ -142,7 +142,7 @@ body {
     position: relative;
     z-index: 2;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 .year-marker:hover {
