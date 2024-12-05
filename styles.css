@@ -23,9 +23,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2.5rem;
+    gap: 3rem;
     margin-bottom: 2rem;
-    padding: 1.5rem;
+    padding: 2rem;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -36,6 +36,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    min-width: 250px;
 }
 
 .logo {
@@ -45,15 +46,15 @@ body {
 }
 
 .unt-logo {
-    height: 70px;
+    height: 120px;  /* Logo UNT */
 }
 
 .sied-logo {
-    height: 120px;
+    height: 140px;  /* Logo SIED más grande */
 }
 
 .peadunt-logo {
-    height: 140px;
+    height: 130px;  /* Logo PEADUNT */
 }
 
 .title-container {
