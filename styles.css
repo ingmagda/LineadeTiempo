@@ -37,27 +37,25 @@ body {
     justify-content: center;
     padding: 1rem;
     min-width: 250px;
+    height: 150px; /* Altura fija para todos los contenedores */
 }
 
-.logo {
-    max-width: 100%;
-    height: auto;
+.logo-wrapper img.unt-logo {
+    height: 130px !important;
+    width: auto;
     object-fit: contain;
 }
 
 .logo-wrapper img.sied-logo {
-    height: 140px !important;
+    height: 130px !important;
     width: auto;
+    object-fit: contain;
 }
 
 .logo-wrapper img.peadunt-logo {
     height: 130px !important;
     width: auto;
-}
-
-.logo-wrapper img.unt-logo {
-    height: 120px !important;
-    width: auto;
+    object-fit: contain;
 }
 .title-container {
     margin-top: 2rem;
