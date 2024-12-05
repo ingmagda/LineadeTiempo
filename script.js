@@ -188,7 +188,7 @@ const Timeline = () => {
                         className={`year-marker ${selectedYear === year ? 'active' : ''}`}
                         onClick={() => setSelectedYear(year)}
                     >
-                        {year.slice(2)}
+                        {year}
                     </div>
                 ))}
             </div>
