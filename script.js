@@ -165,8 +165,8 @@ const Timeline = () => {
                         <img src="logo-peadunt.png" alt="Logo PEADUNT" className="logo peadunt-logo" />
                     </div>
                 </div>
-                <h1 className="timeline-title">Línea del Tiempo: Análisis Docuemntal </h1>
-                <p className="timeline-subtitle">Proyecto de Investigación PIUNT C701</p>
+                <h1 className="timeline-title">Línea de Tiempo</h1>
+                <p className="timeline-subtitle">Línea: "Análisis Documental" del Proyecto de Investigación PIUNT C701</p>
             </div>
 
             <div className="filters-container">
