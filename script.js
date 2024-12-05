@@ -29,7 +29,7 @@ const Timeline = () => {
                 </div>
             </div>
             <div className="title-container">
-                <h1 className="timeline-title">Línea del Tiempo:Análisis Documental</h1>
+                <h1 className="timeline-title">Línea de Tiempo: Análisis Documental</h1>
                 <p className="timeline-subtitle">Proyecto de Investigación PIUNT C701</p>
             </div>
         </div>
